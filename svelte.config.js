@@ -13,7 +13,7 @@ const dev = process.argv.includes("dev");
 const config = {
 	preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ fallback: "404.html" }),
 	},
 	vitePlugin: {
 		inspector: {
