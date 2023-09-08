@@ -2,8 +2,6 @@ import { defineConfig, presetIcons, presetUno, presetWebFonts } from "unocss";
 import { presetForms } from "@julr/unocss-preset-forms";
 import { presetHeroPatterns } from "@julr/unocss-preset-heropatterns";
 import { colors } from "@unocss/preset-mini";
-import { createSafeList } from "./safelist.js";
-import { themes } from "./src/lib/theme/theme.js";
 import presetTheme from "unocss-preset-theme";
 
 export const reloadMe = true;
@@ -32,7 +30,6 @@ export default defineConfig({
 		...Array.from({ length: 26 }, (_, i) => String.fromCharCode("a".charCodeAt(0) + i)).map(
 			(char) => `font-${char}`
 		),
-		...createSafeList(),
 		`font-thin font-extralight font-light font-normal font-medium font-semibold font-bold font-extrabold font-black
         btn-primary btn-secondary`,
 	],
@@ -40,9 +37,7 @@ export default defineConfig({
 	presets: [
 		presetUno({ dark: "class" }),
 		presetForms(),
-		presetTheme({
-			theme: themes,
-		}),
+		// presetTheme(),
 		presetHeroPatterns(),
 		presetWebFonts({
 			provider: "google", // default provider
