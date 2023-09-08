@@ -14,6 +14,9 @@ const config = {
 	preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
 	kit: {
 		adapter: adapter({ fallback: "404.html" }),
+		paths: {
+			base: dev ? "" : process.env.BASE_PATH,
+		},
 	},
 	vitePlugin: {
 		inspector: {
