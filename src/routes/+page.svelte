@@ -1,33 +1,26 @@
 <script>
-	import { onMount } from "svelte";
-	import { base } from "$app/paths";
-	import Footer from "$lib/Footer.svelte";
-	import DarkModeToggle from "$lib/theme/DarkModeToggle.svelte";
-	import ThemeSwitcher from "$lib/theme/ThemeSwitcher.svelte";
-	import { browser } from "$app/environment";
-	import { color } from "$lib/stores";
-	import MeltAccordion from "$lib/melt-examples/MeltAccordion.svelte";
+	export let data;
 
-	// let color = "blue";
-	// $: if (browser) color = localStorage.color;
+	let { postsData } = data;
 </script>
 
-<main
-	class="dark:bg-primary-950 bg-primary-100 min-w-screen flex min-h-screen flex-col items-center [&>*]:m-4">
-	<header>
-		<ThemeSwitcher />
-		<DarkModeToggle />
-	</header>
-
-	<h1 class="text-primary-900 dark:text-primary-100 text-9xl md:p-48 md:pb-0">Hello!</h1>
-	<p class="text-primary-900 dark:text-primary-100">This is the {$color} theme.</p>
-	<button class="btn-primary">A {$color} button</button>
-	<button class="btn-secondary">A {$color} secondary button</button>
-	<p class="text-primary-900 dark:text-primary-100">Now with Melt!</p>
-	<MeltAccordion />
-</main>
-
-<Footer />
+<div class="flex flex-col items-center">
+	<div />
+</div>
+<div class="flex justify-center">
+	<div>
+		{#each postsData as post}
+			<div class="m-4 rounded border-2 border-black p-2 shadow-md shadow-gray-400" key={post.id}>
+				<h2>
+					<span class="text-lg font-bold">Title: </span>
+					<a class="text-black underline hover:text-blue-500" href={`post/${post.id}`}>
+						{post.title}
+					</a>
+				</h2>
+			</div>
+		{/each}
+	</div>
+</div>
 
 <style>
 </style>
