@@ -5,9 +5,9 @@
 </script>
 
 <div class="mt-8 flex flex-col items-center justify-center">
-  <GoBack />
-  <div
-  class="flex w-1/2 flex-col items-center justify-center rounded bg-blue-300 p-2 py-7 shadow-xl shadow-slate-400">
+	<GoBack />
+	<div
+		class="flex w-1/2 flex-col items-center justify-center rounded bg-blue-300 p-2 py-7 shadow-xl shadow-slate-400">
 		<h3 class="mb-4 text-2xl">Information about {data.username}</h3>
 		<p>Name: {data.name}</p>
 		<p>Email: {data.email}</p>

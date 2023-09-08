@@ -1,6 +1,7 @@
 <script>
 	import { page } from "$app/stores";
 	import GoBack from "$lib/components/GoBack.svelte";
+  import { base } from "$app/paths";
 	export let data;
 
 	const postId = parseInt($page.params.postID);
@@ -18,7 +19,7 @@
 		<h1 class="text-3xl">{title}</h1>
 		<p class="pt-4 text-lg">{body}</p>
 		<div class="flex w-full justify-center">
-			<a class="m-4 rounded bg-blue-300 p-2 hover:bg-blue-400" href={`/profile/${userId}`}>
+			<a class="m-4 rounded bg-blue-300 p-2 hover:bg-blue-400" href={`${base}/profile/${userId}`}>
 				User: {username} (id {userId})
 			</a>
 		</div>
