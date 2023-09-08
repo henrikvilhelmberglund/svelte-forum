@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/svelte-forum/favicon.png" />
+		<link rel="stylesheet" href="/svelte-forum/prism-vsc-dark-plus.css" />
+		<!-- <link rel="stylesheet" href="/svelte-forum/unocss-fix.css" /> -->
+		<meta name="viewport" content="width=device-width" />
+		<script>
+			// Tailwind dark mode
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			if (localStorage.theme === "dark") {
+				document.documentElement.classList.add("dark");
+			} else {
+				document.documentElement.classList.remove("dark");
+			}
+			if (!localStorage.color) {
+				// default
+				document.documentElement.classList.add("blue");
+			} else {
+				document.documentElement.classList.add(localStorage.color);
+			}
+		</script>
+		<link href="/svelte-forum/_app/immutable/assets/unocss-svelte-scoped-global.3881b086.css" rel="stylesheet" /> 
+		<link rel="modulepreload" href="/svelte-forum/_app/immutable/entry/start.4e12872e.js">
+		<link rel="modulepreload" href="/svelte-forum/_app/immutable/chunks/scheduler.b0c1c2c3.js">
+		<link rel="modulepreload" href="/svelte-forum/_app/immutable/chunks/singletons.61a24132.js">
+		<link rel="modulepreload" href="/svelte-forum/_app/immutable/chunks/paths.93a2f722.js">
+		<link rel="modulepreload" href="/svelte-forum/_app/immutable/entry/app.713979ee.js">
+		<link rel="modulepreload" href="/svelte-forum/_app/immutable/chunks/index.2188c4af.js">
+	</head>
+
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_1gd4j4t = {
+						assets: "/svelte-forum",
+						base: "/svelte-forum",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/svelte-forum/_app/immutable/entry/start.4e12872e.js"),
+						import("/svelte-forum/_app/immutable/entry/app.713979ee.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
